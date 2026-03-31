@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #sorting algorithm project 
 
 
@@ -19,3 +20,7 @@ To run the experiment :
 run the file :
 python src /benchmark.py 
 
+=======
+# sorting-project-
+this project  about the sorting  algorithm  comparing 
+>>>>>>> 085cf7a346056a08cb9aa7f27f2fe3468c7ab80a
