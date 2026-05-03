@@ -34,7 +34,7 @@ def merge(left, right):
 
 if __name__ == "__main__":
 
-    numbers = [8,4,6,2,7,1]
+    numbers = [8, 4, 6, 2, 7, 1]
 
     print("Original:", numbers)
 

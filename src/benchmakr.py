@@ -1,12 +1,17 @@
-from selection_sort import selection_sort
-from insertion_sort import insertion_sort
-from merge_sort import merge_sort
-from quick_sort import quick_sort
-
 import random
 import time
 import csv
 import os
+
+from selection_sort import selection_sort
+from insertion_sort import insertion_sort
+from merge_sort import merge_sort
+from quick_sort import quick_sort
+from heap_sort import heap_sort
+
+
+def timsort(arr):
+    return sorted(arr)
 
 
 def generate_random_list(size):
@@ -44,14 +49,16 @@ def measure_time(sort_function, data):
 
 if __name__ == "__main__":
 
-    sizes = [20, 50, 100, 500, 1000]
+    sizes = [20, 50, 100, 500, 1000 , 5000, 10000, 50000 ]
 
     algorithms = [
-        ("Selection", selection_sort),
-        ("Insertion", insertion_sort),
-        ("Merge", merge_sort),
-        ("Quick", quick_sort)
-    ]
+    ("Selection", selection_sort),
+    ("Insertion", insertion_sort),
+    ("Merge", merge_sort),
+    ("Quick", quick_sort),
+    ("Heap", heap_sort),
+    ("Timsort", timsort)
+]
 
     structures = [
         ("Random", generate_random_list),
@@ -82,9 +89,8 @@ if __name__ == "__main__":
                         writer.writerow([algorithm_name, size, structure_name, result])
 
                     except Exception as e:
-                        print(algorithm_name, "Sort: ERROR")
-                        writer.writerow([algorithm_name, size, structure_name, "ERROR"])
-
-
+                        error_message = type(e).__name__ + ": " + str(e)
+                        print(algorithm_name, "Sort: ERROR -", error_message)
+                        writer.writerow([algorithm_name, size, structure_name, "ERROR-" + error_message])
 
                       
